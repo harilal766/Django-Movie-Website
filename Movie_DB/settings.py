@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure---q=^(i7kr6_rgz3c%0f*98#0-=_k!0kqjdfowao1m)t_@xq2r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'django-movie-website-production.up.railway.app',
+]
 
 
 MEDIA = '/media/'
@@ -57,6 +59,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Movie_DB.urls'
+
+CSRF_TRUSTED_ORIGINS = [
+    'django-movie-website-production.up.railway.app',
+]
+
 
 TEMPLATES = [
     {
@@ -126,8 +133,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static-blockbuster')]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [os.path.join(BASE_DIR,'static-blockbuster')]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
