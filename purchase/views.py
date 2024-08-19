@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from purchase.models import Booking
 from Movies.models import Movie
-import qrcode
 # Create your views here.
 def booking(request):
     return render(request,'ticketbooking.html')
