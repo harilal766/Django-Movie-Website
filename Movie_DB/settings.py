@@ -61,7 +61,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'Movie_DB.urls'
 
 CSRF_TRUSTED_ORIGINS = [
-    'django-movie-website-production.up.railway.app',
+    'https://django-movie-website-production.up.railway.app',
 ]
 
 
